@@ -17,6 +17,8 @@ This repository holds the source for this Specification, part of the family of [
 
 ### How does it work?
 
+- It specifies what resources and attributes MUST be provided when using NMOS with JPEG XS streams.
+- It specifies requirements for SDP files.
 - It provides examples of how to use IS-04 and IS-05 in the context of JPEG XS streams - specifically JPEG XS encapsulated in RTP as described in IETF [RFC 9134](https://tools.ietf.org/html/rfc9134).
 
 <!-- INTRO-END -->

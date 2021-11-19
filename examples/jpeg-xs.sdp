@@ -6,6 +6,6 @@ m=video 30000 RTP/AVP 112
 c=IN IP4 224.1.1.1/64
 a=source-filter: incl IN IP4 224.1.1.1 192.168.1.2
 a=rtpmap:112 jxsv/90000
-a=fmtp:112 packetmode=0; sampling=YCbCr-4:2:2; width=1920; height=1080; exactframerate=50; depth=10; colorimetry=BT709; TCS=SDR; RANGE=FULL; SSN=ST2110-20:2017; TP=2110TPNL
+a=fmtp:112 packetmode=0; sampling=YCbCr-4:2:2; width=1920; height=1080; exactframerate=50; depth=10; colorimetry=BT709; TCS=SDR; RANGE=FULL; SSN=ST2110-20:2017; TP=2110TPNL; 
 a=mediaclk:direct=0
 a=ts-refclk:localmac=40-a3-6b-a0-2b-d2
