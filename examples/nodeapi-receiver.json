@@ -1,0 +1,23 @@
+{
+  "device_id": "2ed1ef00-5c0f-32b1-84b9-2def21489983",
+  "transport": "urn:x-nmos:transport:rtp.mcast",
+  "format": "urn:x-nmos:format:video",
+  "subscription": { "sender_id": null, "active": false },
+  "caps": {
+    "media_types": [ "video/jxsv" ],
+    "constraint_sets": [
+      {
+        "urn:x-nmos:cap:meta:label": "TO DO"
+      }
+    ],
+    "version": "1635445227:652000"
+  },
+  "interface_bindings": [ "eth0", "eth1" ],
+  "description": "CustomHost [1,1,07]02 vd getting 0.0.0.0:0",
+  "tags": {  
+    "urn:x-nmos:tag:grouphint/v1.0": [ "[1,1,7]:vid02" ]
+  },
+  "id": "88598159-689f-3388-90ae-7fba6cee5f6e",
+  "version": "1635445227:652000",
+  "label": "CustomHost [1,1,07]02 vd"
+}

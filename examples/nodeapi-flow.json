@@ -1,0 +1,23 @@
+{
+  "frame_width": 1280,
+  "frame_height": 720,
+  "interlace_mode": "progressive",
+  "colorspace": "BT709",
+  "transfer_characteristic": "SDR",
+  "components": [
+    { "name": "Y",  "width": 1280, "height": 720, "bit_depth": 10 },
+    { "name": "Cb", "width": 640,  "height": 720, "bit_depth": 10 },
+    { "name": "Cr", "width": 640,  "height": 720, "bit_depth": 10 }
+  ],
+  "format": "urn:x-nmos:format:video",
+  "grain_rate": { "numerator": 60000, "denominator": 1001 },
+  "source_id": "1d7f0019-d4c5-3fb5-b8ad-230cb0c017f3",
+  "device_id": "a98b537d-c628-3cf1-8afc-83076e3c757c",
+  "parents": [],
+  "media_type": "video/jxsv",
+  "description": "Flow CustomHost [3,2,02]02 vs",
+  "tags": {},
+  "id": "58e3d42f-2b78-3f9c-8134-8b07c6176bf0",
+  "version": "1636518564:223000",
+  "label": "flow CustomHost [3,2,02]02 vs"
+}
