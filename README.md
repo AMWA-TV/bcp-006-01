@@ -1,7 +1,7 @@
-# \[Work In Progress\] AMWA BCP-XXX-XX: NMOS With JPEG XS
+# \[Work In Progress\] AMWA BCP-006-01: NMOS With JPEG XS
 
-[![Lint Status](https://github.com/garethsb/nmos-jpeg-xs/workflows/Lint/badge.svg)](https://github.com/garethsb/nmos-jpeg-xs/actions?query=workflow%3ALint)
-[![Render Status](https://github.com/garethsb/nmos-jpeg-xs/workflows/Render/badge.svg)](https://github.com/garethsb/nmos-jpeg-xs/actions?query=workflow%3ARender)
+[![Lint Status](https://github.com/AMWA-TV/bcp-006-01/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/bcp-006-01/actions?query=workflow%3ALint)
+[![Render Status](https://github.com/AMWA-TV/bcp-006-01/workflows/Render/badge.svg)](https://github.com/AMWA-TV/bcp-006-01/actions?query=workflow%3ARender)
 
 This repository holds the source for this Specification, part of the family of [Networked Media Open Specifications](https://specs.amwa.tv/nmos) from the [Advanced Media Workflow Association](https://amwa.tv)
 
