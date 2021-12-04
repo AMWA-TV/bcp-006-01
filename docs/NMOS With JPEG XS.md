@@ -51,10 +51,10 @@ If the Sender meets the traffic shaping and delivery timing requirements specifi
 The Flow resource MUST indicate `video/jxsv` in the `media_type` attribute, and `urn:x-nmos:format:video` for the `format`.
 This has been permitted since IS-04 v1.1.
 
-The Flow resource MUST indicate the color (sub-)sampling using the `components` attribute defined in the [Flow Attributes register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/) of the NMOS Parameter Registers.
+Nodes implementing IS-04 v1.3 or higher MUST indicate the color (sub-)sampling in the Flow resource using the `components` attribute defined in the [Flow Attributes register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/) of the NMOS Parameter Registers.
 The `components` array value corresponds to the `sampling`, `width` and `height` values in the SDP format-specific parameters defined by RFC 9134.
 
-The Flow resource MUST indicate the stream bit rate using the `bit_rate` attribute also defined in the Flow Attributes register.
+Nodes implementing IS-04 v1.3 or higher MUST indicate the stream bit rate in the Flow resource using the `bit_rate` attribute also defined in the Flow Attributes register.
 The bit rate value also appears in the SDP file, per RFC 9134.
 
 An example Flow resource is provided in the [Examples](../examples/).
