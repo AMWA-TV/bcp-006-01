@@ -30,7 +30,16 @@ This has been permitted since IS-04 v1.1.
 
 Nodes implementing [BCP-004-01][] Receiver Capabilities use the existing `constraint_sets` parameter within the `caps` object, describing combinations of frame rates, width and height, and other parameters which the receiver can support, using the parameter constraints defined in the [Capabilities register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/) of the [NMOS Parameter Registers][].
 
-If the Receiver supports streams meeting the traffic shaping and delivery timing requirements for ST 2110-22, it SHOULD use the `urn:x-nmos:cap:transport:st2110_21_sender_type` parameter constraint.
+Receivers are RECOMMENDED to use the following parameter constraints:
+
+- [Frame Width](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#frame-width)
+- [Frame Height](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#frame-width)
+- [Color Sampling](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#color-sampling)
+- [Component Depth](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#component-depth)
+- [Bits Per Pixel](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#bits-per-pixel)
+- [Profile](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#profile)
+
+If the Receiver supports streams meeting the traffic shaping and delivery timing requirements for ST 2110-22, it SHOULD use the [ST 2110-21 Sender Type](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#st-2110-21-sender-type) parameter constraint.
 
 An example Receiver resource is provided in the [Examples](../examples/).
 
@@ -51,11 +60,10 @@ If the Sender meets the traffic shaping and delivery timing requirements specifi
 The Flow resource MUST indicate `video/jxsv` in the `media_type` attribute, and `urn:x-nmos:format:video` for the `format`.
 This has been permitted since IS-04 v1.1.
 
-Nodes implementing IS-04 v1.3 or higher MUST indicate the color (sub-)sampling in the Flow resource using the `components` attribute defined in the [Flow Attributes register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/) of the NMOS Parameter Registers.
+Nodes implementing IS-04 v1.3 or higher MUST indicate the color (sub-)sampling in the Flow resource using the `components` attribute defined in the [Flow Attributes register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#components) of the NMOS Parameter Registers.
 The `components` array value corresponds to the `sampling`, `width` and `height` values in the SDP format-specific parameters defined by RFC 9134.
 
-Nodes implementing IS-04 v1.3 or higher MUST indicate the stream bit rate in the Flow resource using the `bit_rate` attribute also defined in the Flow Attributes register.
-The bit rate value also appears in the SDP file, per RFC 9134.
+Nodes implementing IS-04 v1.3 or higher MUST indicate the coding tools in use, and the compression ratio of the stream, in the Flow resource using the `profile` and `bits_per_pixel` attributes also defined in the Flow Attributes register.
 
 An example Flow resource is provided in the [Examples](../examples/).
 
