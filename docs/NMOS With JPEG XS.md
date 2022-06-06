@@ -38,11 +38,25 @@ The Source is therefore unaffected by the use of JPEG XS compression.
 The Flow resource MUST indicate `video/jxsv` in the `media_type` attribute, and `urn:x-nmos:format:video` for the `format`.
 This has been permitted since IS-04 v1.1.
 
-Nodes implementing IS-04 v1.3 or higher MUST indicate the color (sub-)sampling in the Flow resource using the `components` attribute defined in the [Flow Attributes register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/) of the NMOS Parameter Registers.
-The `components` array value corresponds to the `sampling`, `width` and `height` values in the SDP format-specific parameters defined by RFC 9134.
+For Nodes implementing IS-04 v1.3 or higher, the following additional requirements on the Flow resource apply.
 
-Nodes implementing IS-04 v1.3 or higher MUST indicate the stream bit rate in the Flow resource using the `bit_rate` attribute also defined in the Flow Attributes register.
-The bit rate value also appears in the SDP file, per RFC 9134.
+In addition to those attributes defined in IS-04 for all coded video Flows, the following attributes defined in the [Flow Attributes register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/) of the [NMOS Parameter Registers][] are used for JPEG XS.
+
+- [Components](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#components)  
+  The Flow resource MUST indicate the color (sub-)sampling using the `components` attribute.
+  The `components` array value corresponds to the `sampling`, `width` and `height` values in the SDP format-specific parameters defined by RFC 9134.
+- [Profile](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#profile)  
+  The Flow resource MUST indicate the JPEG XS profile, which defines limits on the required algorithmic features and parameter ranges used in the codestream.
+  The permitted `profile` values are strings, defined as per RFC 9134.
+- [Level](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#level)  
+  The Flow resource MUST indicate the JPEG XS level, which defines a lower bound on the required throughput for a decoder in the image (or decoded) domain.
+  The permitted `level` values are strings, defined as per RFC 9134.
+- [Sublevel Bits Per Pixel](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#sublevel-bits-per-pixel)  
+  The JPEG XS sublevel defines a lower bound on the required throughput for a decoder in the codestream (or coded) domain.
+  When the `sublevel_bpp` attribute is omitted, the Full (or Unrestricted) sublevel is implied.
+  Otherwise, the `sublevel_bpp` value SHOULD indicate the compression ratio used by the encoder in bits per pixel as a number.
+  When the precise value is not available, the value MUST be set based on the sublevel indicated in the codestream or in the SDP format-specific parameters defined by RFC 9134.
+  For example, `Sublev6bpp` is indicated by the value `6`.
 
 An example Flow resource is provided in the [Examples](../examples/).
 
@@ -59,9 +73,23 @@ If the Sender meets the traffic shaping and delivery timing requirements specifi
 Nodes capable of receiving JPEG XS video streams MUST have a Receiver resource in the IS-04 Node API, which lists `video/jxsv` in the `media_types` array within the `caps` object.
 This has been permitted since IS-04 v1.1.
 
-Nodes implementing [BCP-004-01][] Receiver Capabilities use the existing `constraint_sets` parameter within the `caps` object, describing combinations of frame rates, width and height, and other parameters which the receiver can support, using the parameter constraints defined in the [Capabilities register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/) of the [NMOS Parameter Registers][].
+Nodes implementing [BCP-004-01][] Receiver Capabilities use the existing `constraint_sets` parameter within the `caps` object, describing combinations of frame rates, width and height, and other parameters which the receiver can support, using the parameter constraints defined in the [Capabilities register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/) of the NMOS Parameter Registers.
 
-If the Receiver supports streams meeting the traffic shaping and delivery timing requirements for ST 2110-22, it SHOULD use the `urn:x-nmos:cap:transport:st2110_21_sender_type` parameter constraint.
+Receivers are RECOMMENDED to use the following parameter constraints:
+
+- [Profile](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#profile)
+- [Level](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#level)
+- [Sublevel Bits Per Pixel](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#sublevel-bits-per-pixel)  
+  When the JPEG XS decoder supports the Full (or Unrestricted) sublevel, the Receiver MAY indicate that this parameter is unconstrained, as per BCP-004-01.
+
+Receivers SHOULD also use other parameter constraints, such as those on coded video Flow attributes, where appropriate:
+
+- [Frame Width](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#frame-width)
+- [Frame Height](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#frame-height)
+- [Color Sampling](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#color-sampling)
+- [Component Depth](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#component-depth)
+
+If the Receiver supports streams meeting the traffic shaping and delivery timing requirements for ST 2110-22, it SHOULD use the [ST 2110-21 Sender Type](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#st-2110-21-sender-type) parameter constraint.
 
 An example Receiver resource is provided in the [Examples](../examples/).
 
