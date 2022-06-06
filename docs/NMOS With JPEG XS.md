@@ -128,5 +128,5 @@ An example SDP file is provided in the [Examples](../examples/).
 [IS-04]: https://specs.amwa.tv/is-04/ "AMWA IS-04 NMOS Discovery and Registration Specification"
 [IS-05]: https://specs.amwa.tv/is-05/ "AMWA IS-05 NMOS Device Connection Management Specification"
 [NMOS Parameter Registers]: https://specs.amwa.tv/nmos-parameter-registers/ "Common parameter values for AMWA NMOS Specifications"
-[TR-08]: https://vsf.tv/download/technical_recommendations/VSF_TR-08_2021-08-09.pdf "Transport of JPEG XS Video in ST 2110-22"
+[TR-08]: https://vsf.tv/download/technical_recommendations/VSF_TR-08_2022-04-20.pdf "Transport of JPEG XS Video in ST 2110-22"
 [VSF]: https://vsf.tv/ "Video Services Forum"
