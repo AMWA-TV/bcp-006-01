@@ -1,0 +1,20 @@
+{
+  "device_id": "2ed1ef00-5c0f-32b1-84b9-2def21489983",
+  "transport": "urn:x-nmos:transport:rtp.mcast",
+  "subscription": {
+    "receiver_id": null,
+    "active": true
+  },
+  "caps": {},
+  "interface_bindings": [
+    "eth0"
+  ],
+  "manifest_href": "http://192.168.1.2/x-manufacturer/senders/88598159-689f-3388-90ae-7fba6cee5f6e/stream.sdp",
+  "description": "",
+  "tags": {},
+  "id": "88598159-689f-3388-90ae-7fba6cee5f6e",
+  "flow_id": "58e3d42f-2b78-3f9c-8134-8b07c6176bf0",
+  "version": "1636518564:223000",
+  "label": ""
+}
+

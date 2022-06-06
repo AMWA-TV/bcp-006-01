@@ -71,6 +71,20 @@ Sender resources provide no indication of media type or format, since this is de
 The SDP file at the `manifest_href` MUST comply with the requirements of RFC 9134.
 If the Sender meets the traffic shaping and delivery timing requirements specified for ST 2110-22, the SDP file MUST also comply with the provisions of ST 2110-22.
 
+For Nodes implementing IS-04 v1.3 or higher, the following additional requirements on the Sender resource apply.
+
+In addition to those attributes defined in IS-04 for Senders, the following attributes defined in the [Sender Attributes register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/sender-attributes/) of the NMOS Parameter Registers are used for JPEG XS.
+
+- [Bit Rate](https://specs.amwa.tv/nmos-parameter-registers/branches/main/sender-attributes/#bit-rate)  
+  If the Sender complies with ST 2110-22, the Sender resource MUST indicate the bit rate (kilobits/second) including the RTP transport overhead.
+  Otherwise, it is only RECOMMENDED that this attribute is included.
+  The `bit_rate` integer value is expressed in units of 1000 bits per second, rounding up.
+  The value is for the IP packets, including the RTP, UDP and IP packet headers and the payload.
+- [ST 2110-21 Sender Type](https://specs.amwa.tv/nmos-parameter-registers/branches/main/sender-attributes/#st-2110-21-sender-type)  
+  If the Sender complies with the traffic shaping and delivery timing requirements for ST 2110-22, it MUST include the `st2110_21_sender_type` attribute.
+
+An example Sender resource is provided in the [Examples](../examples/).
+
 ## JPEG XS IS-04 Receivers
 
 Nodes capable of receiving JPEG XS video streams MUST have a Receiver resource in the IS-04 Node API, which lists `video/jxsv` in the `media_types` array within the `caps` object.
@@ -85,13 +99,14 @@ Receivers are RECOMMENDED to use the following parameter constraints:
 - [Sublevel Bits Per Pixel](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#sublevel-bits-per-pixel)  
   When the JPEG XS decoder supports the Full (or Unrestricted) sublevel, the Receiver MAY indicate that this parameter is unconstrained, as per BCP-004-01.
 
-Receivers SHOULD also use other parameter constraints, such as those on coded video Flow attributes, where appropriate:
+Receivers SHOULD also use other parameter constraints, such as those on coded video Flow and Sender attributes, where appropriate:
 
 - [Frame Width](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#frame-width)
 - [Frame Height](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#frame-height)
 - [Color Sampling](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#color-sampling)
 - [Component Depth](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#component-depth)
-- [Bit Rate](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#bit-rate)
+- [Format Bit Rate](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#format-bit-rate)
+- [Transport Bit Rate](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#transport-bit-rate)
 
 If the Receiver supports streams meeting the traffic shaping and delivery timing requirements for ST 2110-22, it SHOULD use the [ST 2110-21 Sender Type](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#st-2110-21-sender-type) parameter constraint.
 
