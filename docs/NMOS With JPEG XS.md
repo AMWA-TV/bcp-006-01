@@ -23,28 +23,15 @@ and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119]
 
 The NMOS terms 'Node', 'Source', 'Flow', 'Sender', 'Receiver' are used as defined in the [NMOS Glossary](https://specs.amwa.tv/nmos/main/docs/Glossary.html).
 
-## JPEG XS IS-04 Receivers
+## JPEG XS IS-04 Sources, Flows and Senders
 
-Nodes capable of receiving JPEG XS video streams MUST have a Receiver resource in the IS-04 Node API, which lists `video/jxsv` in the `media_types` array within the `caps` object.
-This has been permitted since IS-04 v1.1.
+Nodes capable of transmitting JPEG XS video streams MUST have Source, Flow and Sender resources in the IS-04 Node API.
 
-Nodes implementing [BCP-004-01][] Receiver Capabilities use the existing `constraint_sets` parameter within the `caps` object, describing combinations of frame rates, width and height, and other parameters which the receiver can support, using the parameter constraints defined in the [Capabilities register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/) of the [NMOS Parameter Registers][].
+### Sources
 
-If the Receiver supports streams meeting the traffic shaping and delivery timing requirements for ST 2110-22, it SHOULD use the `urn:x-nmos:cap:transport:st2110_21_sender_type` parameter constraint.
-
-An example Receiver resource is provided in the [Examples](../examples/).
-
-## JPEG XS IS-04 Senders, Flows and Sources
-
-Nodes capable of transmitting JPEG XS video streams MUST have Sender, Flow and Source resources in the IS-04 Node API.
-
-### Senders
-
-The Sender resource MUST indicate `urn:x-nmos:transport:rtp` or one of its subclassifications for the `transport` attribute.
-Sender resources provide no indication of media type or format, since this is described by the associated Flow resource.
-
-The SDP file at the `manifest_href` MUST comply with the requirements of RFC 9134.
-If the Sender meets the traffic shaping and delivery timing requirements specified for ST 2110-22, the SDP file MUST also comply with the provisions of ST 2110-22.
+The Source resource MUST indicate `urn:x-nmos:format:video` for the `format`.
+Source resources can be associated with many Flows at the same time.
+The Source is therefore unaffected by the use of JPEG XS compression.
 
 ### Flows
 
@@ -59,11 +46,24 @@ The bit rate value also appears in the SDP file, per RFC 9134.
 
 An example Flow resource is provided in the [Examples](../examples/).
 
-### Sources
+### Senders
 
-The Source resource MUST indicate `urn:x-nmos:format:video` for the `format`.
-Source resources can be associated with many Flows at the same time.
-The Source is therefore unaffected by the use of JPEG XS compression.
+The Sender resource MUST indicate `urn:x-nmos:transport:rtp` or one of its subclassifications for the `transport` attribute.
+Sender resources provide no indication of media type or format, since this is described by the associated Flow resource.
+
+The SDP file at the `manifest_href` MUST comply with the requirements of RFC 9134.
+If the Sender meets the traffic shaping and delivery timing requirements specified for ST 2110-22, the SDP file MUST also comply with the provisions of ST 2110-22.
+
+## JPEG XS IS-04 Receivers
+
+Nodes capable of receiving JPEG XS video streams MUST have a Receiver resource in the IS-04 Node API, which lists `video/jxsv` in the `media_types` array within the `caps` object.
+This has been permitted since IS-04 v1.1.
+
+Nodes implementing [BCP-004-01][] Receiver Capabilities use the existing `constraint_sets` parameter within the `caps` object, describing combinations of frame rates, width and height, and other parameters which the receiver can support, using the parameter constraints defined in the [Capabilities register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/) of the [NMOS Parameter Registers][].
+
+If the Receiver supports streams meeting the traffic shaping and delivery timing requirements for ST 2110-22, it SHOULD use the `urn:x-nmos:cap:transport:st2110_21_sender_type` parameter constraint.
+
+An example Receiver resource is provided in the [Examples](../examples/).
 
 ## JPEG XS IS-05 Senders and Receivers
 
