@@ -57,6 +57,9 @@ In addition to those attributes defined in IS-04 for all coded video Flows, the 
   Otherwise, the `sublevel_bpp` value SHOULD indicate the compression ratio used by the encoder in bits per pixel as a number.
   When the precise value is not available, the value MUST be set based on the sublevel indicated in the codestream or in the SDP format-specific parameters defined by RFC 9134.
   For example, `Sublev6bpp` is indicated by the value `6`.
+- [Bit Rate](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#bit-rate)  
+  The Flow resource SHOULD indicate the target bit rate (kilobits/second) of the codestream.
+  The `bit_rate` integer value is expressed in units of 1000 bits per second, rounding up.
 
 An example Flow resource is provided in the [Examples](../examples/).
 
@@ -88,6 +91,7 @@ Receivers SHOULD also use other parameter constraints, such as those on coded vi
 - [Frame Height](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#frame-height)
 - [Color Sampling](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#color-sampling)
 - [Component Depth](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#component-depth)
+- [Bit Rate](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#bit-rate)
 
 If the Receiver supports streams meeting the traffic shaping and delivery timing requirements for ST 2110-22, it SHOULD use the [ST 2110-21 Sender Type](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#st-2110-21-sender-type) parameter constraint.
 
