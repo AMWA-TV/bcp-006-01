@@ -79,7 +79,7 @@ In addition to those attributes defined in IS-04 for Senders, the following attr
   If the Sender complies with ST 2110-22, the Sender resource MUST indicate the bit rate (kilobits/second) including the RTP transport overhead.
   Otherwise, it is only RECOMMENDED that this attribute is included.
   The `bit_rate` integer value is expressed in units of 1000 bits per second, rounding up.
-  The value is for the IP packets, including the RTP, UDP and IP packet headers and the payload.
+  The value is for the IP packets, so for the RTP payload format per RFC 9134, that includes the RTP, UDP and IP packet headers and the payload.
 - [ST 2110-21 Sender Type](https://specs.amwa.tv/nmos-parameter-registers/branches/main/sender-attributes/#st-2110-21-sender-type)  
   If the Sender complies with the traffic shaping and delivery timing requirements for ST 2110-22, it MUST include the `st2110_21_sender_type` attribute.
 
