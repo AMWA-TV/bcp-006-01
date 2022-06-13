@@ -12,7 +12,43 @@
     ],
     "constraint_sets": [
       {
-        "urn:x-nmos:cap:meta:label": "TO DO"
+        "urn:x-nmos:cap:meta:label": "VSF TR-08 Capability Set A Interop Point 1",
+        "urn:x-nmos:cap:format:frame_width": {
+          "enum": [ 1280 ]
+        },
+        "urn:x-nmos:cap:format:frame_height": {
+          "enum": [ 720 ]
+        },
+        "urn:x-nmos:cap:format:interlace_mode": {
+          "enum": [ "progressive" ]
+        },
+        "urn:x-nmos:cap:format:grain_rate": {
+          "enum": [
+            { "numerator": 60000, "denominator": 1001 }
+          ]
+        },
+        "urn:x-nmos:cap:format:bit_rate": {
+          "minimum": 82862,
+          "maximum": 220964
+        },
+        "urn:x-nmos:cap:format:component_depth": {
+          "enum": [ 10 ]
+        },
+        "urn:x-nmos:cap:format:color_sampling": {
+          "enum": [ "YCbCr-4:2:2" ]
+        },
+        "urn:x-nmos:cap:format:colorspace": {
+          "enum": [ "BT709" ]
+        },
+        "urn:x-nmos:cap:format:profile": {
+          "enum": [ "High444.12" ]
+        },
+        "urn:x-nmos:cap:format:level": {
+          "enum": [ "1k-1" ]
+        },
+        "urn:x-nmos:cap:format:sublevel_bpp": {
+          "maximum": 4
+        }
       }
     ],
     "version": "1635445227:652000"
