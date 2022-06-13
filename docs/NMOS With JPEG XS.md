@@ -42,21 +42,24 @@ For Nodes implementing IS-04 v1.3 or higher, the following additional requiremen
 
 In addition to those attributes defined in IS-04 for all coded video Flows, the following attributes defined in the [Flow Attributes register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/) of the [NMOS Parameter Registers][] are used for JPEG XS.
 
+These attributes provide information for Controllers and Users to evaluate stream compatibility between Senders and Receivers.
+
 - [Components](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#components)  
   The Flow resource MUST indicate the color (sub-)sampling using the `components` attribute.
   The `components` array value corresponds to the `sampling`, `width` and `height` values in the SDP format-specific parameters defined by RFC 9134.
 - [Profile](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#profile)  
-  The Flow resource MUST indicate the JPEG XS profile, which defines limits on the required algorithmic features and parameter ranges used in the codestream.
+  The Flow resource is strongly RECOMMENDED to indicate the JPEG XS profile, which defines limits on the required algorithmic features and parameter ranges used in the codestream.
   The permitted `profile` values are strings, defined as per RFC 9134.
+  The Unrestricted profile is indicated by omitting this attribute.
 - [Level](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#level)  
-  The Flow resource MUST indicate the JPEG XS level, which defines a lower bound on the required throughput for a decoder in the image (or decoded) domain.
+  The Flow resource is strongly RECOMMENDED to indicate the JPEG XS level, which defines a lower bound on the required throughput for a decoder in the image (or decoded) domain.
   The permitted `level` values are strings, defined as per RFC 9134.
+  The Unrestricted level is indicated by omitting this attribute.
 - [Sublevel Bits Per Pixel](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#sublevel-bits-per-pixel)  
-  The JPEG XS sublevel defines a lower bound on the required throughput for a decoder in the codestream (or coded) domain.
-  When the `sublevel_bpp` attribute is omitted, the Full (or Unrestricted) sublevel is implied.
-  Otherwise, the `sublevel_bpp` value SHOULD indicate the compression ratio used by the encoder in bits per pixel as a number.
-  When the precise value is not available, the value MUST be set based on the sublevel indicated in the codestream or in the SDP format-specific parameters defined by RFC 9134.
-  For example, `Sublev6bpp` is indicated by the value `6`.
+  The Flow resource is strongly RECOMMENDED to indicate the JPEG XS sublevel, which defines a lower bound on the required throughput for a decoder in the codestream (or coded) domain.
+  The permitted `sublevel_bpp` values are integers, expressed in bits per pixel (BPP), corresponding to the sublevel.   
+  The Full sublevel is indicated by the number of bits per component multiplied by the number of components in the uncompressed image.
+  The Unrestricted sublevel is indicated by omitting this attribute.
 - [Bit Rate](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#bit-rate)  
   The Flow resource SHOULD indicate the target bit rate (kilobits/second) of the codestream.
   The `bit_rate` integer value is expressed in units of 1000 bits per second, rounding up.
@@ -97,7 +100,8 @@ Receivers are RECOMMENDED to use the following parameter constraints:
 - [Profile](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#profile)
 - [Level](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#level)
 - [Sublevel Bits Per Pixel](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#sublevel-bits-per-pixel)  
-  When the JPEG XS decoder supports the Full (or Unrestricted) sublevel, the Receiver MAY indicate that this parameter is unconstrained, as per BCP-004-01.
+
+When the JPEG XS decoder supports the Unrestricted profile, level or sublevel, the Receiver MAY indicate that the parameter is unconstrained, as described in BCP-004-01.
 
 Receivers SHOULD also use other parameter constraints, such as those on coded video Flow and Sender attributes, where appropriate:
 
