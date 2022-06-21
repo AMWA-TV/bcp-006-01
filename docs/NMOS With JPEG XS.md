@@ -55,10 +55,9 @@ These attributes provide information for Controllers and Users to evaluate strea
   The Flow resource is strongly RECOMMENDED to indicate the JPEG XS level, which defines a lower bound on the required throughput for a decoder in the image (or decoded) domain.
   The permitted `level` values are strings, defined as per RFC 9134.
   The Unrestricted level is indicated by omitting this attribute.
-- [Sublevel Bits Per Pixel](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#sublevel-bits-per-pixel)  
+- [Sublevel](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#sublevel)  
   The Flow resource is strongly RECOMMENDED to indicate the JPEG XS sublevel, which defines a lower bound on the required throughput for a decoder in the codestream (or coded) domain.
-  The permitted `sublevel_bpp` values are integers, expressed in bits per pixel (BPP), corresponding to the sublevel.   
-  The Full sublevel is indicated by the number of bits per component multiplied by the number of components in the uncompressed image.
+  The permitted `sublevel` values are strings, defined as per RFC 9134.
   The Unrestricted sublevel is indicated by omitting this attribute.
 - [Bit Rate](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#bit-rate)  
   The Flow resource SHOULD indicate the target bit rate (kilobits/second) of the codestream.
@@ -99,9 +98,10 @@ Receivers are RECOMMENDED to use the following parameter constraints:
 
 - [Profile](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#profile)
 - [Level](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#level)
-- [Sublevel Bits Per Pixel](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#sublevel-bits-per-pixel)  
+- [Sublevel](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#sublevel)  
 
 When the JPEG XS decoder supports the Unrestricted profile, level or sublevel, the Receiver MAY indicate that the parameter is unconstrained, as described in BCP-004-01.
+When the decoder does not support Unrestricted but supports a range of profiles, levels or sublevels, the `enum` Constraint Keyword can be used to indicate the acceptable values.
 
 Receivers SHOULD also use other parameter constraints, such as those on coded video Flow and Sender attributes, where appropriate:
 

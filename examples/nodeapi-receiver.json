@@ -46,8 +46,8 @@
         "urn:x-nmos:cap:format:level": {
           "enum": [ "1k-1" ]
         },
-        "urn:x-nmos:cap:format:sublevel_bpp": {
-          "maximum": 4
+        "urn:x-nmos:cap:format:sublevel": {
+          "enum": [ "Sublev3bpp", "Sublev4bpp" ]
         }
       }
     ],
