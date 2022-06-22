@@ -1,4 +1,8 @@
 {
+  "profile": "High444.12",
+  "level": "1k-1",
+  "sublevel": "Sublev3bpp",
+  "bit_rate": 110482,
   "frame_width": 1280,
   "frame_height": 720,
   "interlace_mode": "progressive",
@@ -12,7 +16,7 @@
   "format": "urn:x-nmos:format:video",
   "grain_rate": { "numerator": 60000, "denominator": 1001 },
   "source_id": "1d7f0019-d4c5-3fb5-b8ad-230cb0c017f3",
-  "device_id": "a98b537d-c628-3cf1-8afc-83076e3c757c",
+  "device_id": "2ed1ef00-5c0f-32b1-84b9-2def21489983",
   "parents": [],
   "media_type": "video/jxsv",
   "description": "Flow CustomHost [3,2,02]02 vs",
