@@ -82,6 +82,9 @@ In addition to those attributes defined in IS-04 for Senders, the following attr
   Otherwise, it is only RECOMMENDED that this attribute is included.
   The `bit_rate` integer value is expressed in units of 1000 bits per second, rounding up.
   The value is for the IP packets, so for the RTP payload format per RFC 9134, that includes the RTP, UDP and IP packet headers and the payload.
+- [Packet Transmission Mode](https://specs.amwa.tv/nmos-parameter-registers/branches/main/sender-attributes/#packet-transmission-mode)  
+  If the Sender is using the slice packetization mode, it MUST include the `packet_transmission_mode` attribute.
+  Since the default value of this attribute is `codestream`, the Sender MAY omit this attribute when using codestream packetization.
 - [ST 2110-21 Sender Type](https://specs.amwa.tv/nmos-parameter-registers/branches/main/sender-attributes/#st-2110-21-sender-type)  
   If the Sender complies with the traffic shaping and delivery timing requirements for ST 2110-22, it MUST include the `st2110_21_sender_type` attribute.
 
@@ -99,6 +102,7 @@ Receivers are RECOMMENDED to use the following parameter constraints:
 - [Profile](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#profile)
 - [Level](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#level)
 - [Sublevel](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#sublevel)  
+- [Packet Transmission Mode](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#packet-transmission-mode)  
 
 When the JPEG XS decoder supports the Unrestricted profile, level or sublevel, the Receiver MAY indicate that the parameter is unconstrained, as described in BCP-004-01.
 When the decoder does not support Unrestricted but supports a range of profiles, levels or sublevels, the `enum` Constraint Keyword can be used to indicate the acceptable values.

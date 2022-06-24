@@ -48,6 +48,9 @@
         },
         "urn:x-nmos:cap:format:sublevel": {
           "enum": [ "Sublev3bpp", "Sublev4bpp" ]
+        },
+        "urn:x-nmos:cap:transport:packet_transmission_mode": {
+          "enum": [ "codestream" ]
         }
       }
     ],
