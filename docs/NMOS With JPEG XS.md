@@ -48,19 +48,19 @@ These attributes provide information for Controllers and Users to evaluate strea
   The Flow resource MUST indicate the color (sub-)sampling using the `components` attribute.
   The `components` array value corresponds to the `sampling`, `width` and `height` values in the SDP format-specific parameters defined by RFC 9134.
 - [Profile](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#profile)  
-  The Flow resource is strongly RECOMMENDED to indicate the JPEG XS profile, which defines limits on the required algorithmic features and parameter ranges used in the codestream.
+  The Flow resource MUST indicate the JPEG XS profile, which defines limits on the required algorithmic features and parameter ranges used in the codestream.
   The permitted `profile` values are strings, defined as per RFC 9134.
   The Unrestricted profile is indicated by omitting this attribute.
 - [Level](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#level)  
-  The Flow resource is strongly RECOMMENDED to indicate the JPEG XS level, which defines a lower bound on the required throughput for a decoder in the image (or decoded) domain.
+  The Flow resource MUST indicate the JPEG XS level, which defines a lower bound on the required throughput for a decoder in the image (or decoded) domain.
   The permitted `level` values are strings, defined as per RFC 9134.
   The Unrestricted level is indicated by omitting this attribute.
 - [Sublevel](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#sublevel)  
-  The Flow resource is strongly RECOMMENDED to indicate the JPEG XS sublevel, which defines a lower bound on the required throughput for a decoder in the codestream (or coded) domain.
+  The Flow resource MUST indicate the JPEG XS sublevel, which defines a lower bound on the required throughput for a decoder in the codestream (or coded) domain.
   The permitted `sublevel` values are strings, defined as per RFC 9134.
   The Unrestricted sublevel is indicated by omitting this attribute.
 - [Bit Rate](https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#bit-rate)  
-  The Flow resource SHOULD indicate the target bit rate (kilobits/second) of the codestream.
+  The Flow resource MUST indicate the target bit rate (kilobits/second) of the codestream.
   The `bit_rate` integer value is expressed in units of 1000 bits per second, rounding up.
 
 An example Flow resource is provided in the [Examples](../examples/).
@@ -78,10 +78,10 @@ For Nodes implementing IS-04 v1.3 or higher, the following additional requiremen
 In addition to those attributes defined in IS-04 for Senders, the following attributes defined in the [Sender Attributes register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/sender-attributes/) of the NMOS Parameter Registers are used for JPEG XS.
 
 - [Bit Rate](https://specs.amwa.tv/nmos-parameter-registers/branches/main/sender-attributes/#bit-rate)  
-  If the Sender complies with ST 2110-22, the Sender resource MUST indicate the bit rate (kilobits/second) including the RTP transport overhead.
-  Otherwise, it is only RECOMMENDED that this attribute is included.
+  The Sender resource MUST indicate the bit rate (kilobits/second) including the RTP transport overhead.
   The `bit_rate` integer value is expressed in units of 1000 bits per second, rounding up.
-  The value is for the IP packets, so for the RTP payload format per RFC 9134, that includes the RTP, UDP and IP packet headers and the payload.
+  The value is for the IP packets, so for the RTP payload format per RFC 9134, that includes the RTP, UDP and IP packet headers and the payload.  
+  Informative note: This definition is consistent with the definition of the bit rate attribute required by ST 2110-22 in the SDP media description.
 - [Packet Transmission Mode](https://specs.amwa.tv/nmos-parameter-registers/branches/main/sender-attributes/#packet-transmission-mode)  
   If the Sender is using the slice packetization mode, it MUST include the `packet_transmission_mode` attribute.
   Since the default value of this attribute is `codestream`, the Sender MAY omit this attribute when using codestream packetization.
