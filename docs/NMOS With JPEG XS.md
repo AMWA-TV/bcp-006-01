@@ -95,7 +95,8 @@ An example Sender resource is provided in the [Examples](../examples/).
 Nodes capable of receiving JPEG XS video streams MUST have a Receiver resource in the IS-04 Node API, which lists `video/jxsv` in the `media_types` array within the `caps` object.
 This has been permitted since IS-04 v1.1.
 
-If the Receiver has limitations on the JPEG XS video streams that it supports, the Receiver resource MUST indicate the constraints using [BCP-004-01][] Receiver Capabilities. The `constraint_sets` parameter within the `caps` object can be used to describe combinations of frame rates, width and height, and other parameters which the receiver can support, using the parameter constraints defined in the [Capabilities register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/) of the NMOS Parameter Registers.
+If the Receiver has limitations on the JPEG XS video streams that it supports, the Receiver resource MUST indicate the constraints using [BCP-004-01][] Receiver Capabilities.
+The `constraint_sets` parameter within the `caps` object can be used to describe combinations of frame rates, width and height, and other parameters which the receiver can support, using the parameter constraints defined in the [Capabilities register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/) of the NMOS Parameter Registers.
 
 The following parameter constraints can be used to express limits specifically defined by ISO/IEC 21122 and RFC 9134 for JPEG XS decoders:
 
