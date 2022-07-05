@@ -97,7 +97,7 @@ This has been permitted since IS-04 v1.1.
 
 If the Receiver has limitations on the JPEG XS video streams that it supports, the Receiver resource MUST indicate the constraints using [BCP-004-01][] Receiver Capabilities. The `constraint_sets` parameter within the `caps` object can be used to describe combinations of frame rates, width and height, and other parameters which the receiver can support, using the parameter constraints defined in the [Capabilities register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/) of the NMOS Parameter Registers.
 
-The following parameter constraints have been registered initially for use with JPEG XS:
+The following parameter constraints can be used to express limits specifically defined by ISO/IEC 21122 and RFC 9134 for JPEG XS decoders:
 
 - [Profile](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#profile)
 - [Level](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#level)
@@ -107,7 +107,7 @@ The following parameter constraints have been registered initially for use with 
 When the JPEG XS decoder supports the Unrestricted profile, level or sublevel, the Receiver can indicate that the parameter is unconstrained, as described in BCP-004-01.
 When the decoder does not support Unrestricted but supports a range of profiles, levels or sublevels, the `enum` Constraint Keyword can be used to indicate the acceptable values.
 
-Other parameter constraints, such as the following ones on coded video Flow and Sender attributes, are also appropriate for use with JPEG XS:
+Other existing parameter constraints, such as the following, are also appropriate to express limitations on supported JPEG XS video streams:
 
 - [Frame Width](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#frame-width)
 - [Frame Height](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#frame-height)
