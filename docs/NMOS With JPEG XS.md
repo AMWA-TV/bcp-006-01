@@ -95,19 +95,20 @@ An example Sender resource is provided in the [Examples](../examples/).
 Nodes capable of receiving JPEG XS video streams MUST have a Receiver resource in the IS-04 Node API, which lists `video/jxsv` in the `media_types` array within the `caps` object.
 This has been permitted since IS-04 v1.1.
 
-Nodes implementing [BCP-004-01][] Receiver Capabilities use the existing `constraint_sets` parameter within the `caps` object, describing combinations of frame rates, width and height, and other parameters which the receiver can support, using the parameter constraints defined in the [Capabilities register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/) of the NMOS Parameter Registers.
+If the Receiver has limitations on the JPEG XS video streams that it supports, the Receiver resource MUST indicate the constraints using [BCP-004-01][] Receiver Capabilities.
+The `constraint_sets` parameter within the `caps` object can be used to describe combinations of frame rates, width and height, and other parameters which the receiver can support, using the parameter constraints defined in the [Capabilities register](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/) of the NMOS Parameter Registers.
 
-Receivers are RECOMMENDED to use the following parameter constraints:
+The following parameter constraints can be used to express limits specifically defined by ISO/IEC 21122 and RFC 9134 for JPEG XS decoders:
 
 - [Profile](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#profile)
 - [Level](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#level)
 - [Sublevel](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#sublevel)  
 - [Packet Transmission Mode](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#packet-transmission-mode)  
 
-When the JPEG XS decoder supports the Unrestricted profile, level or sublevel, the Receiver MAY indicate that the parameter is unconstrained, as described in BCP-004-01.
+When the JPEG XS decoder supports the Unrestricted profile, level or sublevel, the Receiver can indicate that the parameter is unconstrained, as described in BCP-004-01.
 When the decoder does not support Unrestricted but supports a range of profiles, levels or sublevels, the `enum` Constraint Keyword can be used to indicate the acceptable values.
 
-Receivers SHOULD also use other parameter constraints, such as those on coded video Flow and Sender attributes, where appropriate:
+Other existing parameter constraints, such as the following, are also appropriate to express limitations on supported JPEG XS video streams:
 
 - [Frame Width](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#frame-width)
 - [Frame Height](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#frame-height)
@@ -115,10 +116,9 @@ Receivers SHOULD also use other parameter constraints, such as those on coded vi
 - [Component Depth](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#component-depth)
 - [Format Bit Rate](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#format-bit-rate)
 - [Transport Bit Rate](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#transport-bit-rate)
+- [ST 2110-21 Sender Type](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#st-2110-21-sender-type)
 
-If the Receiver supports streams meeting the traffic shaping and delivery timing requirements for ST 2110-22, it SHOULD use the [ST 2110-21 Sender Type](https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#st-2110-21-sender-type) parameter constraint.
-
-An example Receiver resource is provided in the [Examples](../examples/).
+An example Receiver resource is provided in the [Examples](../examples/) that demonstrates how to represent VSF TR-08 interoperability points using these parameter constraints.
 
 ## JPEG XS IS-05 Senders and Receivers
 
