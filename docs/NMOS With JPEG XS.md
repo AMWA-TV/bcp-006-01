@@ -71,6 +71,9 @@ For Nodes transmitting JPEG XS using the RTP payload mapping defined by RFC 9134
 Sender resources provide no indication of media type or format, since this is described by the associated Flow resource.
 
 The SDP file at the `manifest_href` MUST comply with the requirements of RFC 9134.
+Additionally, the format-specific parameters defined by RFC 9134 are made REQUIRED in the same circumstances that a corresponding Flow attribute MUST be included, in order that the information provided to an NMOS Controller through a Flow is also provided to a Receiver through the SDP file.
+This means that `profile`, `level`, `sublevel`, `sampling`, `depth`, `width`, `height`, `exactframerate`, `colorimetry`, `interlace` and `segmented` are all REQUIRED depending on the properties of the JPEG XS stream.
+
 If the Sender meets the traffic shaping and delivery timing requirements specified for ST 2110-22, the SDP file MUST also comply with the provisions of ST 2110-22.
 
 For Nodes implementing IS-04 v1.3 or higher, the following additional requirements on the Sender resource apply.
@@ -126,9 +129,10 @@ An example Receiver resource is provided in the [Examples](../examples/) that de
 ## JPEG XS IS-05 Senders and Receivers
 
 Connection Management using IS-05 proceeds in exactly the same manner as for any other stream format carried within RTP.
-The SDP file at the **/transportfile** endpoint on Senders MUST comply with the requirements of RFC 9134 and, if appropriate, ST 2110-22.
+The SDP file at the **/transportfile** endpoint on Senders MUST comply with the same requirements described for the SDP file at the IS-04 Sender `manifest_href`.
 
 An SDP file provided in the `transport_file` attribute of a `PATCH` request on the **/staged** endpoint of Receivers MUST also comply with RFC 9134 and, if appropriate, ST 2110-22.
+Note that Receivers MUST handle such SDP files that do not comply with the additional requirements described for Senders.
 
 An example SDP file is provided in the [Examples](../examples/).
 
