@@ -71,8 +71,11 @@ For Nodes transmitting JPEG XS using the RTP payload mapping defined by RFC 9134
 Sender resources provide no indication of media type or format, since this is described by the associated Flow resource.
 
 The SDP file at the `manifest_href` MUST comply with the requirements of RFC 9134.
-Additionally, the format-specific parameters defined by RFC 9134 are made REQUIRED in the same circumstances that a corresponding Flow attribute MUST be included, in order that the information provided to an NMOS Controller through a Flow is also provided to a Receiver through the SDP file.
-This means that `profile`, `level`, `sublevel`, `sampling`, `depth`, `width`, `height`, `exactframerate`, `colorimetry`, `interlace` and `segmented` are all REQUIRED depending on the properties of the JPEG XS stream.
+Additionally, the SDP file MUST convey, so far as the defined parameters allow, the same information about the stream as conveyed by the Source, Flow and Sender attributes.
+
+- Each of the `profile`, `level` and `sublevel` format-specific parameters MUST be included with the correct value unless it is Unrestricted.
+- The correct `sampling`, `depth`, `width`, `height`, `exactframerate` and `colorimetry` MUST always be included.
+- The `interlace` and `segmented` parameters MUST be included or omitted to correctly indicate the scanning/interlace mode.
 
 If the Sender meets the traffic shaping and delivery timing requirements specified for ST 2110-22, the SDP file MUST also comply with the provisions of ST 2110-22.
 
@@ -132,7 +135,8 @@ Connection Management using IS-05 proceeds in exactly the same manner as for any
 The SDP file at the **/transportfile** endpoint on Senders MUST comply with the same requirements described for the SDP file at the IS-04 Sender `manifest_href`.
 
 An SDP file provided in the `transport_file` attribute of a `PATCH` request on the **/staged** endpoint of Receivers MUST also comply with RFC 9134 and, if appropriate, ST 2110-22.
-Note that Receivers MUST handle such SDP files that do not comply with the additional requirements described for Senders.
+However, a Receiver MUST handle such an SDP file that does not comply with the additional requirements described for Senders.
+When processing a request, a Receiver SHOULD use the parameters in the SDP file to evaluate if it would not be capable of consuming the stream.
 
 An example SDP file is provided in the [Examples](../examples/).
 
