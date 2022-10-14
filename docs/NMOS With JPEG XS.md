@@ -71,7 +71,8 @@ For Nodes transmitting JPEG XS using the RTP payload mapping defined by RFC 9134
 Sender resources provide no indication of media type or format, since this is described by the associated Flow resource.
 
 The SDP file at the `manifest_href` MUST comply with the requirements of RFC 9134.
-Additionally, the SDP file MUST convey, so far as the defined parameters allow, the same information about the stream as conveyed by the Source, Flow and Sender attributes.
+Additionally, the SDP file MUST convey, so far as the defined parameters allow, the same information about the stream as conveyed by the Source, Flow and Sender attributes defined by this specification and IS-04.
+Therefore:
 
 - Each of the `profile`, `level` and `sublevel` format-specific parameters MUST be included with the correct value unless it is Unrestricted.
 - The correct `sampling`, `depth`, `width`, `height`, `exactframerate` and `colorimetry` MUST always be included.
@@ -132,11 +133,15 @@ An example Receiver resource is provided in the [Examples](../examples/) that de
 ## JPEG XS IS-05 Senders and Receivers
 
 Connection Management using IS-05 proceeds in exactly the same manner as for any other stream format carried within RTP.
-The SDP file at the **/transportfile** endpoint on Senders MUST comply with the same requirements described for the SDP file at the IS-04 Sender `manifest_href`.
 
-An SDP file provided in the `transport_file` attribute of a `PATCH` request on the **/staged** endpoint of Receivers MUST also comply with RFC 9134 and, if appropriate, ST 2110-22.
-However, a Receiver MUST handle such an SDP file that does not comply with the additional requirements described for Senders.
-When processing a request, a Receiver SHOULD use the parameters in the SDP file to evaluate if it would not be capable of consuming the stream.
+The SDP file at the **/transportfile** endpoint on an IS-05 Sender MUST comply with the same requirements described for the SDP file at the IS-04 Sender `manifest_href`.
+
+A `PATCH` request on the **/staged** endpoint of an IS-05 Receiver can contain an SDP file in the `transport_file` attribute.
+The SDP file for a JPEG XS stream is expected to comply with RFC 9134 and, if appropriate, ST 2110-22.
+It need not comply with the additional requirements specified for SDP files at Senders.
+
+The Receiver SHOULD evaluate whether it would not be capable of consuming the stream and reject the request if so.
+The Receiver SHOULD NOT reject the request just because it is unable to assess the stream compatibility, for example when the SDP file does not include some of the optional parameters defined by RFC 9134.
 
 An example SDP file is provided in the [Examples](../examples/).
 
