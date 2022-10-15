@@ -1,6 +1,8 @@
 {
   "device_id": "2ed1ef00-5c0f-32b1-84b9-2def21489983",
   "transport": "urn:x-nmos:transport:rtp.mcast",
+  "bit_rate": 116000,
+  "st2110_21_sender_type": "2110TPN",
   "subscription": {
     "receiver_id": null,
     "active": true
