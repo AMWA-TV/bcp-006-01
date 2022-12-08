@@ -71,11 +71,11 @@ For Nodes transmitting JPEG XS using the RTP payload mapping defined by RFC 9134
 Sender resources provide no indication of media type or format, since this is described by the associated Flow resource.
 
 The SDP file at the `manifest_href` MUST comply with the requirements of RFC 9134.
-Additionally, the SDP file needs to convey, so far as the defined parameters allow, the same information about the stream as conveyed by the Source, Flow and Sender attributes defined by this specification and IS-04.
+Additionally, the SDP file needs to convey, so far as the defined parameters allow, the same information about the stream as conveyed by the Source, Flow and Sender attributes (or their defaults, when omitted) defined by this specification and IS-04.
 Therefore:
 
 - Each of the `profile`, `level` and `sublevel` format-specific parameters MUST be included with the correct value unless it is Unrestricted.
-- The correct `sampling`, `depth`, `width`, `height`, `exactframerate` and `colorimetry` MUST be included in all cases.
+- The correct `sampling`, `depth`, `width`, `height`, `exactframerate`, `colorimetry` and `TCS` MUST be included in all cases.
 - The `interlace` and `segmented` parameters MUST be included or omitted to correctly indicate the scanning/interlace mode.
 
 If the Sender meets the traffic shaping and delivery timing requirements specified for ST 2110-22, the SDP file MUST also comply with the provisions of ST 2110-22.
