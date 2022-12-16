@@ -27,6 +27,9 @@ The NMOS terms 'Controller', 'Node', 'Source', 'Flow', 'Sender', 'Receiver' are 
 
 Nodes capable of transmitting JPEG XS video streams MUST have Source, Flow and Sender resources in the IS-04 Node API.
 
+Nodes MUST support IS-04 v1.3 to implement all aspects of this specification.
+Partial implementation can be achieved using IS-04 v1.2 and earlier.
+
 ### Sources
 
 The Source resource MUST indicate `urn:x-nmos:format:video` for the `format`.
@@ -147,7 +150,10 @@ An example SDP file is provided in the [Examples](../examples/).
 
 ## Controllers
 
-Controllers MUST support IS-04 to discover JPEG XS Senders and Receivers and IS-05 to manage connections between them.
+Controllers MUST use IS-04 to discover JPEG XS Senders and Receivers and IS-05 to manage connections between them.
+Controllers MUST support IS-04 v1.3 to implement all aspects of this specification.
+Partial implementation can be achieved using IS-04 v1.2 and earlier.
+
 Controllers MUST support the BCP-004-01 Receiver Capabilities mechanism and all the parameter constraints listed in this specification in order to evaluate the stream compatibility between JPEG XS Senders and Receivers.
 
 [BCP-004-01]: https://specs.amwa.tv/bcp-004-01/ "AMWA BCP-004-01 NMOS Receiver Capabilities"
