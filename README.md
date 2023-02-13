@@ -1,4 +1,4 @@
-# \[Work In Progress\] AMWA BCP-006-01: NMOS With JPEG XS
+# AMWA BCP-006-01: NMOS With JPEG XS
 
 [![Lint Status](https://github.com/AMWA-TV/bcp-006-01/workflows/Lint/badge.svg)](https://github.com/AMWA-TV/bcp-006-01/actions?query=workflow%3ALint)
 [![Render Status](https://github.com/AMWA-TV/bcp-006-01/workflows/Render/badge.svg)](https://github.com/AMWA-TV/bcp-006-01/actions?query=workflow%3ARender)
