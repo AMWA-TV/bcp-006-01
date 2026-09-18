@@ -1,0 +1,728 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://specs.amwa.tv/new/bcp-006-01/v1.0.0/NMOS%20With%20JPEG%20XS/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.62">
+    
+    
+      
+        <title>AMWA BCP-006-01: NMOS With JPEG XS - AMWA BCP-006-01: NMOS With JPEG XS</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.ce62732f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/amwa-branding.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#amwa-bcp-006-01-nmos-with-jpeg-xs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="./.." title="AMWA BCP-006-01: NMOS With JPEG XS" class="md-header__button md-logo" aria-label="AMWA BCP-006-01: NMOS With JPEG XS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AMWA BCP-006-01: NMOS With JPEG XS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AMWA BCP-006-01: NMOS With JPEG XS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/AMWA-TV/bcp-006-01" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AMWA-TV/bcp-006-01
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="AMWA BCP-006-01: NMOS With JPEG XS" class="md-nav__button md-logo" aria-label="AMWA BCP-006-01: NMOS With JPEG XS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    AMWA BCP-006-01: NMOS With JPEG XS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AMWA-TV/bcp-006-01" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AMWA-TV/bcp-006-01
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  AMWA BCP-006-01: NMOS With JPEG XS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Examples
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/nodeapi-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  nodeapi-flow.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/nodeapi-receiver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  nodeapi-receiver.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/nodeapi-sender/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  nodeapi-sender.json
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-of-normative-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Use of Normative Language
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Definitions
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jpeg-xs-is-04-sources-flows-and-senders" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        JPEG XS IS-04 Sources, Flows and Senders
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JPEG XS IS-04 Sources, Flows and Senders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sources
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Flows
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#senders" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Senders
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jpeg-xs-is-04-receivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        JPEG XS IS-04 Receivers
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jpeg-xs-is-05-senders-and-receivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        JPEG XS IS-05 Senders and Receivers
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controllers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Controllers
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="amwa-bcp-006-01-nmos-with-jpeg-xs">AMWA BCP-006-01: NMOS With JPEG XS</h1>
+<p><em>(c) AMWA 2021, CC Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)</em></p>
+<p><a href="https://jpeg.org/jpegxs/" title="Overview of JPEG XS">JPEG XS</a> is a technology standardized in ISO/IEC 21122 for video contribution at low latency with very high video quality.
+A companion RTP payload format specification was developed through the IETF Payloads working group, IETF <a href="https://tools.ietf.org/html/rfc9134" title="RTP Payload Format for ISO/IEC 21122 (JPEG XS)">RFC 9134</a>.</p>
+<p>The <a href="https://vsf.tv/" title="Video Services Forum">Video Services Forum</a> developed Technical Recommendation <a href="https://vsf.tv/download/technical_recommendations/VSF_TR-08_2022-04-20.pdf" title="Transport of JPEG XS Video in ST 2110-22">TR-08</a>, which covers the end-to-end application use of JPEG XS compression for video, alongside uncompressed audio and VANC, using the SMPTE ST 2110 suite of protocols.
+TR-08 mandates the use of the AMWA <a href="https://specs.amwa.tv/is-04/" title="AMWA IS-04 NMOS Discovery and Registration Specification">IS-04</a> and <a href="https://specs.amwa.tv/is-05/" title="AMWA IS-05 NMOS Device Connection Management Specification">IS-05</a> NMOS Specifications in TR-08 compliant systems.  </p>
+<p>AMWA IS-04 and IS-05 already have support for RTP transport and can signal the media type <code>video/jxsv</code> as defined in RFC 9134.  </p>
+<h2 id="use-of-normative-language">Use of Normative Language</h2>
+<p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY",
+and "OPTIONAL" in this document are to be interpreted as described in <a href="https://tools.ietf.org/html/rfc2119" title="Key words for use in RFCs">RFC 2119</a>.</p>
+<h2 id="definitions">Definitions</h2>
+<p>The NMOS terms 'Controller', 'Node', 'Source', 'Flow', 'Sender', 'Receiver' are used as defined in the <a href="https://specs.amwa.tv/nmos/main/docs/Glossary.html">NMOS Glossary</a>.</p>
+<h2 id="jpeg-xs-is-04-sources-flows-and-senders">JPEG XS IS-04 Sources, Flows and Senders</h2>
+<p>Nodes capable of transmitting JPEG XS video streams MUST have Source, Flow and Sender resources in the IS-04 Node API.</p>
+<p>Nodes MUST support IS-04 v1.3 to implement all aspects of this specification.
+Partial implementation can be achieved using IS-04 v1.2 and earlier.</p>
+<h3 id="sources">Sources</h3>
+<p>The Source resource MUST indicate <code>urn:x-nmos:format:video</code> for the <code>format</code>.
+Source resources can be associated with many Flows at the same time.
+The Source is therefore unaffected by the use of JPEG XS compression.</p>
+<h3 id="flows">Flows</h3>
+<p>The Flow resource MUST indicate <code>video/jxsv</code> in the <code>media_type</code> attribute, and <code>urn:x-nmos:format:video</code> for the <code>format</code>.
+This has been permitted since IS-04 v1.1.</p>
+<p>For Nodes implementing IS-04 v1.3 or higher, the following additional requirements on the Flow resource apply.</p>
+<p>In addition to those attributes defined in IS-04 for all coded video Flows, the following attributes defined in the <a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/">Flow Attributes register</a> of the <a href="https://specs.amwa.tv/nmos-parameter-registers/" title="Common parameter values for AMWA NMOS Specifications">NMOS Parameter Registers</a> are used for JPEG XS.</p>
+<p>These attributes provide information for Controllers and Users to evaluate stream compatibility between Senders and Receivers.</p>
+<ul>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#components">Components</a><br />
+  The Flow resource MUST indicate the color (sub-)sampling using the <code>components</code> attribute.
+  The <code>components</code> array value corresponds to the <code>sampling</code>, <code>width</code> and <code>height</code> values in the SDP format-specific parameters defined by RFC 9134.</li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#profile">Profile</a><br />
+  The Flow resource MUST indicate the JPEG XS profile, which defines limits on the required algorithmic features and parameter ranges used in the codestream.
+  The permitted <code>profile</code> values are strings, defined as per RFC 9134.
+  The Unrestricted profile is indicated by omitting this attribute.</li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#level">Level</a><br />
+  The Flow resource MUST indicate the JPEG XS level, which defines a lower bound on the required throughput for a decoder in the image (or decoded) domain.
+  The permitted <code>level</code> values are strings, defined as per RFC 9134.
+  The Unrestricted level is indicated by omitting this attribute.</li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#sublevel">Sublevel</a><br />
+  The Flow resource MUST indicate the JPEG XS sublevel, which defines a lower bound on the required throughput for a decoder in the codestream (or coded) domain.
+  The permitted <code>sublevel</code> values are strings, defined as per RFC 9134.
+  The Unrestricted sublevel is indicated by omitting this attribute.</li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/flow-attributes/#bit-rate">Bit Rate</a><br />
+  The Flow resource MUST indicate the target bit rate (kilobits/second) of the codestream.
+  The <code>bit_rate</code> integer value is expressed in units of 1000 bits per second, rounding up.</li>
+</ul>
+<p>An example Flow resource is provided in the <a href="../../examples/">Examples</a>.</p>
+<h3 id="senders">Senders</h3>
+<p>For Nodes transmitting JPEG XS using the RTP payload mapping defined by RFC 9134, the Sender resource MUST indicate <code>urn:x-nmos:transport:rtp</code> or one of its subclassifications for the <code>transport</code> attribute.
+Sender resources provide no indication of media type or format, since this is described by the associated Flow resource.</p>
+<p>The SDP file at the <code>manifest_href</code> MUST comply with the requirements of RFC 9134.
+Additionally, the SDP file needs to convey, so far as the defined parameters allow, the same information about the stream as conveyed by the Source, Flow and Sender attributes (or their defaults, when omitted) defined by this specification and IS-04.
+Therefore:</p>
+<ul>
+<li>Each of the <code>profile</code>, <code>level</code> and <code>sublevel</code> format-specific parameters MUST be included with the correct value unless it is Unrestricted.</li>
+<li>The correct <code>sampling</code>, <code>depth</code>, <code>width</code>, <code>height</code>, <code>exactframerate</code>, <code>colorimetry</code> and <code>TCS</code> MUST be included in all cases.</li>
+<li>The <code>interlace</code> and <code>segmented</code> parameters MUST be included or omitted to correctly indicate the scanning/interlace mode.</li>
+</ul>
+<p>If the Sender meets the traffic shaping and delivery timing requirements specified for ST 2110-22, the SDP file MUST also comply with the provisions of ST 2110-22.</p>
+<p>For Nodes implementing IS-04 v1.3 or higher, the following additional requirements on the Sender resource apply.</p>
+<p>In addition to those attributes defined in IS-04 for Senders, the following attributes defined in the <a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/sender-attributes/">Sender Attributes register</a> of the NMOS Parameter Registers are used for JPEG XS.</p>
+<ul>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/sender-attributes/#bit-rate">Bit Rate</a><br />
+  The Sender resource MUST indicate the bit rate (kilobits/second) including the RTP transport overhead.
+  The <code>bit_rate</code> integer value is expressed in units of 1000 bits per second, rounding up.
+  The value is for the IP packets, so for the RTP payload format per RFC 9134, that includes the RTP, UDP and IP packet headers and the payload.<br />
+  Informative note: This definition is consistent with the definition of the bit rate attribute required by ST 2110-22 in the SDP media description.</li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/sender-attributes/#packet-transmission-mode">Packet Transmission Mode</a><br />
+  If the Sender is using the slice packetization mode, it MUST include the <code>packet_transmission_mode</code> attribute.
+  Since the default value of this attribute is <code>codestream</code>, the Sender MAY omit this attribute when using codestream packetization.</li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/sender-attributes/#st-2110-21-sender-type">ST 2110-21 Sender Type</a><br />
+  If the Sender complies with the traffic shaping and delivery timing requirements for ST 2110-22, it MUST include the <code>st2110_21_sender_type</code> attribute.</li>
+</ul>
+<p>An example Sender resource is provided in the <a href="../../examples/">Examples</a>.</p>
+<h2 id="jpeg-xs-is-04-receivers">JPEG XS IS-04 Receivers</h2>
+<p>Nodes capable of receiving JPEG XS video streams MUST have a Receiver resource in the IS-04 Node API, which lists <code>video/jxsv</code> in the <code>media_types</code> array within the <code>caps</code> object.
+This has been permitted since IS-04 v1.1.</p>
+<p>If the Receiver has limitations on or preferences regarding the JPEG XS video streams that it supports, the Receiver resource MUST indicate constraints in accordance with the <a href="https://specs.amwa.tv/bcp-004-01/" title="AMWA BCP-004-01 NMOS Receiver Capabilities">BCP-004-01</a> Receiver Capabilities specification.
+The Receiver SHOULD express its constraints as precisely as possible, to allow a Controller to determine with a high level of confidence the Receiver's compatibility with the available streams.
+It is not always practical for the constraints to indicate every type of stream that a Receiver can or cannot consume successfully; however, they SHOULD describe as many of its commonly used operating points as practical and any preferences among them.</p>
+<p>The <code>constraint_sets</code> parameter within the <code>caps</code> object can be used to describe combinations of frame rates, width and height, and other parameters which the Receiver can support, using the parameter constraints defined in the <a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/">Capabilities register</a> of the NMOS Parameter Registers.</p>
+<p>The following parameter constraints can be used to express limits specifically defined by ISO/IEC 21122 and RFC 9134 for JPEG XS decoders:</p>
+<ul>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#profile">Profile</a></li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#level">Level</a></li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#sublevel">Sublevel</a>  </li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#packet-transmission-mode">Packet Transmission Mode</a>  </li>
+</ul>
+<p>When the JPEG XS decoder supports the Unrestricted profile, level or sublevel, the Receiver can indicate that the parameter is unconstrained, as described in BCP-004-01.
+When the decoder does not support Unrestricted but supports a range of profiles, levels or sublevels, the <code>enum</code> Constraint Keyword can be used to indicate the acceptable values.</p>
+<p>Other existing parameter constraints, such as the following, are also appropriate to express limitations on supported JPEG XS video streams:</p>
+<ul>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#frame-width">Frame Width</a></li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#frame-height">Frame Height</a></li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#color-sampling">Color Sampling</a></li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#component-depth">Component Depth</a></li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#format-bit-rate">Format Bit Rate</a></li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#transport-bit-rate">Transport Bit Rate</a></li>
+<li><a href="https://specs.amwa.tv/nmos-parameter-registers/branches/main/capabilities/#st-2110-21-sender-type">ST 2110-21 Sender Type</a></li>
+</ul>
+<p>An example Receiver resource is provided in the <a href="../../examples/">Examples</a> that demonstrates how to represent VSF TR-08 interoperability points using these parameter constraints.</p>
+<h2 id="jpeg-xs-is-05-senders-and-receivers">JPEG XS IS-05 Senders and Receivers</h2>
+<p>Connection Management using IS-05 proceeds in exactly the same manner as for any other stream format carried within RTP.</p>
+<p>The SDP file at the <strong>/transportfile</strong> endpoint on an IS-05 Sender MUST comply with the same requirements described for the SDP file at the IS-04 Sender <code>manifest_href</code>.</p>
+<p>A <code>PATCH</code> request on the <strong>/staged</strong> endpoint of an IS-05 Receiver can contain an SDP file in the <code>transport_file</code> attribute.
+The SDP file for a JPEG XS stream is expected to comply with RFC 9134 and, if appropriate, ST 2110-22.
+It need not comply with the additional requirements specified for SDP files at Senders.</p>
+<p>If the Receiver is not capable of consuming the stream described by the SDP file, it SHOULD reject the request.
+If it is unable to assess the stream compatibility, for example when the SDP file does not include some of the optional parameters defined by RFC 9134, it MAY accept the request.</p>
+<p>An example SDP file is provided in the <a href="../../examples/">Examples</a>.</p>
+<h2 id="controllers">Controllers</h2>
+<p>Controllers MUST use IS-04 to discover JPEG XS Senders and Receivers and IS-05 to manage connections between them.
+Controllers MUST support IS-04 v1.3 to implement all aspects of this specification.
+Partial implementation can be achieved using IS-04 v1.2 and earlier.</p>
+<p>Controllers MUST support the BCP-004-01 Receiver Capabilities mechanism and all the parameter constraints listed in this specification in order to evaluate the stream compatibility between JPEG XS Senders and Receivers.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":[],"redirect":null,"search":"../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"provider":"mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.8dcc8e9c.min.js"></script>
+      
+        <script src="../javascripts/json-viewer.js"></script>
+      
+        <script src="../javascripts/amwa-branding.js"></script>
+      
+    
+  </body>
+</html>
