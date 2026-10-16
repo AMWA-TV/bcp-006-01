@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-006-01/v1.0.x/</loc>
+        <loc>https://specs.amwa.tv/bcp-006-01/v1.0.x/v1.0.x/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-006-01/v1.0.x/NMOS%20With%20JPEG%20XS/</loc>
+        <loc>https://specs.amwa.tv/bcp-006-01/v1.0.x/v1.0.x/404/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-006-01/v1.0.x/examples/</loc>
+        <loc>https://specs.amwa.tv/bcp-006-01/v1.0.x/v1.0.x/NMOS%20With%20JPEG%20XS/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-006-01/v1.0.x/examples/nodeapi-flow/</loc>
+        <loc>https://specs.amwa.tv/bcp-006-01/v1.0.x/v1.0.x/examples/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-006-01/v1.0.x/examples/nodeapi-receiver/</loc>
+        <loc>https://specs.amwa.tv/bcp-006-01/v1.0.x/v1.0.x/examples/nodeapi-flow/</loc>
       </url>
       <url>
-        <loc>https://specs.amwa.tv/new/bcp-006-01/v1.0.x/examples/nodeapi-sender/</loc>
+        <loc>https://specs.amwa.tv/bcp-006-01/v1.0.x/v1.0.x/examples/nodeapi-receiver/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/bcp-006-01/v1.0.x/v1.0.x/examples/nodeapi-sender/</loc>
+      </url>
+      <url>
+        <loc>https://specs.amwa.tv/bcp-006-01/v1.0.x/v1.0.x/images/</loc>
       </url>
 </urlset>
