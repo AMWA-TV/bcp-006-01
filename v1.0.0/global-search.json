@@ -33,12 +33,6 @@
       "repository": "AMWA-TV/bcp-006-01"
     },
     {
-      "title": "README",
-      "url": "https://specs.amwa.tv/bcp-006-01/latest/images/",
-      "text": "README README README - AMWA BCP-006-01: NMOS With JPEG XS Skip to content README This directory is for images used in documentation",
-      "repository": "AMWA-TV/bcp-006-01"
-    },
-    {
       "title": "AMWA BCP-006-01: NMOS With JPEG XS",
       "url": "https://specs.amwa.tv/bcp-006-01/latest/",
       "text": "AMWA BCP-006-01: NMOS With JPEG XS AMWA BCP-006-01: NMOS With JPEG XS What does it do? Why does it matter? How does it work? Getting started AMWA BCP-006-01: NMOS With JPEG XS - AMWA BCP-006-01: NMOS With JPEG XS Skip to content AMWA BCP-006-01: NMOS With JPEG XS This repository holds the source for this Specification, part of the family of Networked Media Open Specifications from the Advanced Media Workflow Association What does it do? Enables Registration, Discovery, and Connection Management of JPEG XS Endpoints using the AMWA IS-04 and IS-05 NMOS Specifications. Why does it matter? It helps ensure consistency between implementations offering NMOS control for JPEG XS endpoints. How does it work? It specifies what resources and attributes MUST be provided when using NMOS with JPEG XS streams. It specifies requirements for SDP files. It provides examples of how to use IS-04 and IS-05 in the context of JPEG XS streams - specifically JPEG XS encapsulated in RTP as described in IETF RFC 9134 . Getting started There is more information about the NMOS Specifications and their GitHub repos at https://specs.amwa.tv/nmos .",
